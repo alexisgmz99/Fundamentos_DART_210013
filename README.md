@@ -15,7 +15,7 @@ el M.T.I Marco A. Ramirez Hernandez
 |5|TIPOS DE DATOS DINAMICOS EN DART	|5|FINALIZADA
 |6|MAPAS|6|FINALIZADA
 |7|listas, Iterables, y Conjunto de Datos |9|Activa
-|8|Funciones |10| Activa
+
 
 ### Lista de Herramientas
 ![DART](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white)
