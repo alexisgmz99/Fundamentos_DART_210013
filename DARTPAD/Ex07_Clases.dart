@@ -1,56 +1,56 @@
 void main()
 {
-  // Repaso de clases 
+  //Repaso de Clases en DART
 
-  //Instanciamos la Clase Hero 
-  print("Hero 1:--------------------------------------------------------------");
-  final wolverine=Hero("Logan","Regeneracion");
+  //Instaciamos la clase Heroe
+  print("Heroe 1 : ------------------------------------------------------------------");
+  final wolverine = Hero("Logan", "Regeneracion");
+
   print(wolverine);
   print(wolverine.name);
   print(wolverine.power);
 
-  final scarletWitch=Hero("Magia del Caos","Wanda");
-  print("Hero 1:--------------------------------------------------------------");
+  final scarletWitch = Hero("Magia del Caos", "Wanda");
+  print("Heroe 2: -------------------------------------------------------------------");
   print(scarletWitch);
   print(scarletWitch.name);
   print(scarletWitch.power);
 
-  final xmen=Team(type:"Heroes",name:"X-Men");
+  final xmen = Team(type:"Heroes", name:"X-Men");
   print(xmen);
   print(xmen.name);
   print(xmen.type);
 
-  final justiceLigue = Team(name:"La liga de la justicia");
-  print(justiceLigue);
-  print(justiceLigue.name);
-  print(justiceLigue.type);
+  final justiceLeague = Team(name:"La Liga de la Justicia");
+  print(justiceLeague);
+  print(justiceLeague.name);
+  print(justiceLeague.type);
 
-  //Intentamos instanciar la clase con solo el valor del tipo que no lo permite por que la 
-  //final hydra = Team(type: "Villanos"); 
-  
+  //Intentamos instanciar la clase con solo el valor tipo, que no lo permite por que la propiedad de nombre es requerida
+  //final hydra=Team(type: "Villanos");
+  print(justiceLeague.toString());
 }
-//Valores Posicionales
 
-
+//Clase con propiedades posicionales
 class Hero
 {
   String name;
   String power;
-// inicializacion del constructor 
-  Hero(String pName, String pPower):
-    name=pName,
-    power=pPower;
+
+  Hero(String pName,String pPower):
+    name = pName,
+    power = pPower;
+
 }
 
-// Clase con propiedades no posicionales y nombradas
+//Clase con propiedades no posicionales y nombradas
 class Team
 {
   String name;
   String type;
+  //el constructor de la clase siempre debe llevar el mismo nombre de la misma
+  Team({required this.name, this.type = "No definido."});
 
-  //El constructor de la clase siempre debe llevar el mismo nombre
-  Team({required this.name, this.type="No definido."});
-  
   @override
   String toString(){
     return 'Grupo: $name, Tipo: $type';
