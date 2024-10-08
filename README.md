@@ -17,8 +17,9 @@ el M.T.I Marco A. Ramirez Hernandez
 |7|listas, Iterables, y Conjunto de Datos |9|FINALIZADA
 |8|Funciones |10| FINALIZADA
 |9|Clases y Sobreescritura de Metodos Nativos |9| FINALIZADA
-|10|Constructores Nombrados |8| ACTIVA
-|11|Getters (lectura controlada) y Setters(Modificación controlada) |9| ACTIVA
+|10|Constructores Nombrados |8| FINALIZADA
+|11|Getters (lectura controlada) y Setters(Modificación controlada) |9| FINALIZADA
+|12|Clases Abstractas|8| ACTIVA
 ### Lista de Herramientas
 ![DART](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white)
 
