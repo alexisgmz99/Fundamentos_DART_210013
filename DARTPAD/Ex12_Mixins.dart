@@ -1,42 +1,75 @@
-abstract class Animal {}
+Practica 12:
 
-abstract class Mamifero extends Animal {}
-abstract class Ave extends Animal {}
-abstract class Pez extends Animal {}
+Clonación repo y creación de rama: Si
 
-abstract class Volador{
-  void volar()=> print ('Estoy volando');
-}
+Declaración de una Clase Abstracta: Sí
 
-abstract class Caminante{
-  void caminar()=> print ('Estoy caminando');
-}
+Constructor de una Clase Abstracta: Sí
 
-abstract class Nadador{
-  void nadar()=> print ('Estoy nadando');
-}
+Función de Clase : Sí
 
+Enumerales: Sí
 
-class Delfin extends Mamifero with Nadador {}
-class Murcielago extends Mamifero with Volador, Caminante {}
-class Gato extends Mamifero with Caminante {}
+Extendas: Sí
 
+Implementaciones: Sí
 
-class Paloma  extends Ave with Caminante, Volador {}
+Acceso a las propiedades a través del prefijo <windPlant,nuclearPlant>: Sí
 
-class Pato extends Ave with Caminante, Volador, Nadador {}
+Sobreescritura de Funciones y Propiedades de una clase abstracta: Si
 
-class Tiburon extends Pez with Nadador {}
+Impresión de resultados: Sí
 
-class PezVolador extends Pez with Nadador, Volador {}
+Commits, y  Fusión de ramal : Sí
 
 
-void main (){
-  final flipper = Delfin();
-  flipper.nadar();
-  
-  final namor = Pato();
-  namor.caminar();
-  namor.volar();
-  namor.nadar();
-}
+
+Practica 13:
+
+Clonando repo y creando rama: Sí
+
+Reglas de negocio con aserciones: Si
+
+Commits, Fusion del ramal: Si
+
+
+
+Tarea 04-Clases abstractas caso hospital
+
+Definición de la clase abstracta Persona
+
+Definición de la función de la clase
+
+Declaración de propiedades de la clase Paciente
+
+Sobreescritura de las propiedades de la clase abstracta persona
+
+Método CRUD de la clase
+
+Sobreescritura de la función registrarDefuncion
+
+Uso de extends/implements
+
+CASO DE PRUEBA 1
+
+CASO DE PRUEBA 2
+
+CASO DE PRUEBA 3
+
+
+
+PRACTICA14:
+
+Clonación repo y creación de rama: Si
+
+Declaración  de clase abstracta principal (Animal): Si
+
+Declaración de las clases abstracta de los subtipos de Animal(Mamífero, Ave,Pez): Si
+
+Declaración de las funciones Mixion: Si
+
+Instanciación de las clase con el operador (delfin, murcielago, gato,paloma,pato,tiburon,pez volador):Si
+
+Impresión de resultados: Si
+
+Commits, fusión de ramal:Si
