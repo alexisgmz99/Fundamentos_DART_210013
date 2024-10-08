@@ -21,6 +21,7 @@ el M.T.I Marco A. Ramirez Hernandez
 |11|Getters (lectura controlada) y Setters(Modificación controlada) |9| FINALIZADA
 |12|Clases Abstractas|11| ACTIVA
 |13|Aserciones|3| ACTIVA
+|14|Mixins|7| ACTIVA
 ### Lista de Herramientas
 ![DART](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white)
 
