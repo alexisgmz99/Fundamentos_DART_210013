@@ -1,75 +1,46 @@
-Practica 12:
+abstract class Animal{}
 
-Clonación repo y creación de rama: Si
+abstract class Mamifero extends Animal{}
+abstract class Ave extends Animal{}
+abstract class Pez extends Animal{}
 
-Declaración de una Clase Abstracta: Sí
+mixin Volador{
+  void volar() => print('estoy volando');
+}
 
-Constructor de una Clase Abstracta: Sí
+mixin Caminante{
+  void caminar() => print('estoy caminando');
+}
 
-Función de Clase : Sí
+mixin Nadador{
+  void nadar() => print('estoy nadando');
+}
 
-Enumerales: Sí
+class Delfin extends Mamifero with Nadador{}
+class Murcielago extends Mamifero with Volador, Caminante{}
+class Gato extends Mamifero with Caminante{}
 
-Extendas: Sí
+class Paloma extends Ave with Caminante, Volador{}
+class Pato extends Ave with Caminante, Volador, Nadador{}
 
-Implementaciones: Sí
+class Tiburon extends Pez with Nadador{}
+class PezVolador extends Pez with Nadador, Volador{}
 
-Acceso a las propiedades a través del prefijo <windPlant,nuclearPlant>: Sí
+void main() {
+  final flipper = Delfin();
+  print("Instanciando la clase de Delfín y accediendo a sus dunciones.");
+  flipper.nadar();
 
-Sobreescritura de Funciones y Propiedades de una clase abstracta: Si
+  print("----------------------------------------------");
+  print("Instanciando la clase de Murcielago y accediendo a sus dunciones.");
+  final chupacabras = Murcielago();
+  chupacabras.caminar();
+  chupacabras.volar();
 
-Impresión de resultados: Sí
-
-Commits, y  Fusión de ramal : Sí
-
-
-
-Practica 13:
-
-Clonando repo y creando rama: Sí
-
-Reglas de negocio con aserciones: Si
-
-Commits, Fusion del ramal: Si
-
-
-
-Tarea 04-Clases abstractas caso hospital
-
-Definición de la clase abstracta Persona
-
-Definición de la función de la clase
-
-Declaración de propiedades de la clase Paciente
-
-Sobreescritura de las propiedades de la clase abstracta persona
-
-Método CRUD de la clase
-
-Sobreescritura de la función registrarDefuncion
-
-Uso de extends/implements
-
-CASO DE PRUEBA 1
-
-CASO DE PRUEBA 2
-
-CASO DE PRUEBA 3
-
-
-
-PRACTICA14:
-
-Clonación repo y creación de rama: Si
-
-Declaración  de clase abstracta principal (Animal): Si
-
-Declaración de las clases abstracta de los subtipos de Animal(Mamífero, Ave,Pez): Si
-
-Declaración de las funciones Mixion: Si
-
-Instanciación de las clase con el operador (delfin, murcielago, gato,paloma,pato,tiburon,pez volador):Si
-
-Impresión de resultados: Si
-
-Commits, fusión de ramal:Si
+  print("----------------------------------------------");
+  print("Instanciando la clase de Pato y accediendo a sus dunciones.");
+  final donald = Pato();
+  donald.caminar();
+  donald.volar();
+  donald.nadar();
+}
