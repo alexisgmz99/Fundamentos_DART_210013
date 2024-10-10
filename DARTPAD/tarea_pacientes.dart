@@ -1,9 +1,9 @@
 void main() {
-  // Primer caso: Paciente activo
-  // Creación  objeto Paciente
+  // 8. Caso de Prueba 1
   print("Caso 1: Paciente activo");
   print("------------------------------------------------------");
   final paciente1 = Paciente(
+      cortesyTitle: "Sr",
       id: 256,
       nombre: 'Julio Alexis',
       primer_apellido: 'Gomez',
@@ -21,12 +21,12 @@ void main() {
       fechaUltimaCita: DateTime.now(),
       tipoUsuario: usuario.Nuevo);
   paciente1.imprimirDatosPaciente();
-  // Llamada a método para imprimir datos
 
-  // Segundo caso: Paciente que fue trabajador del hospital
+  // 9. Caso de Prueba 2
   print("\nCaso 2: Paciente que fue trabajador del hospital");
   print("------------------------------------------------------");
   final paciente2 = Paciente(
+      cortesyTitle: "Sra",
       id: 257,
       nombre: 'María',
       primer_apellido: 'López',
@@ -46,10 +46,11 @@ void main() {
   
   paciente2.imprimirDatosPaciente();
 
-  // Tercer caso: Paciente fallecido
+  // 10. Caso de Prueba 3
   print("\nCaso 3: Paciente fallecido");
   print("------------------------------------------------------");
   final paciente3 = Paciente(
+      cortesyTitle: "Sra",
       id: 258,
       nombre: 'Ana',
       primer_apellido: 'Hernández',
@@ -67,10 +68,8 @@ void main() {
       fechaUltimaCita: DateTime.now(),
       tipoUsuario: usuario.Registrado);
 
-  // Registrar defunción del paciente
+  // 6. Sobreescritura de la Función registrarDefuncion()
   paciente3.registrarDefuncion();
-
-  // Llamada a método para imprimir datos 
   paciente3.imprimirDatosPaciente();
 }
 
@@ -80,9 +79,10 @@ enum usuario { Nuevo, Registrado, Finado }
 // Enumeración para el estatus de vida
 enum EstatusVida { Vivo, Fallecido, Desconocido }
 
-// Clase abstracta Persona
+// 1. Definición de la Clase Abstracta <Persona>
 abstract class Persona {
   int id;
+  String cortesyTitle;
   String nombre;
   String primer_apellido;
   String segundo_apellido;
@@ -93,9 +93,10 @@ abstract class Persona {
   String estatus;
   DateTime fechaRegistro;
   
-  // Constructor para inicializar los atributos de la persona
+  // 2. Definición de la Función de la Clase <Paciente>
   Persona({
     required this.id,
+    required this.cortesyTitle,
     required this.nombre,
     required this.primer_apellido,
     required this.segundo_apellido,
@@ -108,6 +109,7 @@ abstract class Persona {
   });
 
   void imprimirDatosPersona() {
+    print('$cortesyTitle. $nombre $primer_apellido $segundo_apellido');
     print('ID: $id');
     print('Nombre: $nombre');
     print('Primer Apellido: $primer_apellido');
@@ -118,14 +120,15 @@ abstract class Persona {
     print('CURP: $curp');
     print('Estatus: $estatus');
   }
+
   // Método auxiliar para formatear números a dos dígitos
-  // Retorna el número como cadena con dos dígitos
   String _twoDigits(int n) {
     return n >= 10 ? '$n' : '0$n';
   }
 }
 
-// Clase Paciente que hereda de Persona
+// 3. Declaración de las Propiedades de la Clase <Paciente>
+// 4. Sobreescritura de las Propiedades de la Clase Abstracta <Persona>
 class Paciente extends Persona {
   String nss;
   String tipoSeguro;
@@ -134,9 +137,10 @@ class Paciente extends Persona {
   DateTime fechaUltimaCita;
   usuario tipoUsuario;
 
-    // Constructor para inicializar los atributos del paciente
+  // 5. Métodos CRUD de la Clase <Paciente, Persona>
   Paciente({
     required int id,
+    required String cortesyTitle,
     required String nombre,
     required String primer_apellido,
     required String segundo_apellido,
@@ -154,6 +158,7 @@ class Paciente extends Persona {
     required this.tipoUsuario,
   }) : super(
             id: id,
+            cortesyTitle: cortesyTitle,
             nombre: nombre,
             primer_apellido: primer_apellido,
             segundo_apellido: segundo_apellido,
@@ -175,13 +180,13 @@ class Paciente extends Persona {
     print('Fecha de Registro: ${fechaRegistro.year}-${_twoDigits(fechaRegistro.month)}-${_twoDigits(fechaRegistro.day)}');
   }
 
-  
-    // Método que imprime los datos de la persona y los del paciente
+  // Método que imprime los datos de la persona y los del paciente
   void imprimirDatosPaciente() {
     imprimirDatosPersona();
     print('Fecha Última Cita: ${fechaUltimaCita.year}-${_twoDigits(fechaUltimaCita.month)}-${_twoDigits(fechaUltimaCita.day)}');
   }
 
+  // 6. Sobreescritura de la Función registrarDefuncion()
   void registrarDefuncion() {
     estatusVida = EstatusVida.Fallecido;
     estatusMedico = 'Inactivo';
