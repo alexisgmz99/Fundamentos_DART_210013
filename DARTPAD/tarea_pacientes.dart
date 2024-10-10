@@ -1,13 +1,14 @@
 void main() {
   // Primer caso: Paciente activo
+  // Creación  objeto Paciente
   print("Caso 1: Paciente activo");
+  print("------------------------------------------------------");
   final paciente1 = Paciente(
       id: 256,
-      cortesyTitle: "Sr,.",
       nombre: 'Julio Alexis',
       primer_apellido: 'Gomez',
       segundo_apellido: 'Gaona',
-      genero: 'Male',
+      genero: 'Masculino',
       grupoSanguineo: 'A+',
       fechaNacimiento: DateTime(2002, 09, 04),
       curp: 'GOGJ020904HVZMNLA4',
@@ -19,19 +20,18 @@ void main() {
       fechaRegistro: DateTime.now(),
       fechaUltimaCita: DateTime.now(),
       tipoUsuario: usuario.Nuevo);
-
-  print("Nombre del primer paciente: ${paciente1.cortesyTitle} ${paciente1.nombre} ${paciente1.primer_apellido} ${paciente1.segundo_apellido}");
   paciente1.imprimirDatosPaciente();
+  // Llamada a método para imprimir datos
 
   // Segundo caso: Paciente que fue trabajador del hospital
   print("\nCaso 2: Paciente que fue trabajador del hospital");
+  print("------------------------------------------------------");
   final paciente2 = Paciente(
       id: 257,
-      cortesyTitle: "Sra.",
       nombre: 'María',
       primer_apellido: 'López',
       segundo_apellido: 'Martínez',
-      genero: 'Female',
+      genero: 'Femenina',
       grupoSanguineo: 'A+',
       fechaNacimiento: DateTime(1985, 02, 02),
       curp: 'LOMJ850202MDFRPL01',
@@ -43,19 +43,18 @@ void main() {
       fechaRegistro: DateTime(2012, 01, 20),
       fechaUltimaCita: DateTime.now(),
       tipoUsuario: usuario.Registrado);
-
-  print("Nombre del segundo paciente: ${paciente2.cortesyTitle} ${paciente2.nombre} ${paciente2.primer_apellido} ${paciente2.segundo_apellido}");
+  
   paciente2.imprimirDatosPaciente();
 
   // Tercer caso: Paciente fallecido
   print("\nCaso 3: Paciente fallecido");
+  print("------------------------------------------------------");
   final paciente3 = Paciente(
       id: 258,
-      cortesyTitle: "Sra.",
       nombre: 'Ana',
       primer_apellido: 'Hernández',
       segundo_apellido: 'Ruiz',
-      genero: 'Female',
+      genero: 'Femenina',
       grupoSanguineo: 'B+',
       fechaNacimiento: DateTime(1990, 03, 03),
       curp: 'HERA900303HDFRRL01',
@@ -71,7 +70,7 @@ void main() {
   // Registrar defunción del paciente
   paciente3.registrarDefuncion();
 
-  print("Nombre del tercer paciente: ${paciente3.cortesyTitle} ${paciente3.nombre} ${paciente3.primer_apellido} ${paciente3.segundo_apellido}");
+  // Llamada a método para imprimir datos 
   paciente3.imprimirDatosPaciente();
 }
 
@@ -81,13 +80,9 @@ enum usuario { Nuevo, Registrado, Finado }
 // Enumeración para el estatus de vida
 enum EstatusVida { Vivo, Fallecido, Desconocido }
 
-// Enumeración para el estatus médico
-enum EstatusMedico { Activo, Inactivo }
-
 // Clase abstracta Persona
 abstract class Persona {
   int id;
-  String cortesyTitle;
   String nombre;
   String primer_apellido;
   String segundo_apellido;
@@ -97,10 +92,10 @@ abstract class Persona {
   String curp;
   String estatus;
   DateTime fechaRegistro;
-
+  
+  // Constructor para inicializar los atributos de la persona
   Persona({
     required this.id,
-    required this.cortesyTitle,
     required this.nombre,
     required this.primer_apellido,
     required this.segundo_apellido,
@@ -113,9 +108,6 @@ abstract class Persona {
   });
 
   void imprimirDatosPersona() {
-    print('Datos de la Persona: $cortesyTitle $nombre $primer_apellido $segundo_apellido');
-    print('Fecha de Registro: $fechaRegistro');
-    print('-----------------------------------------------------------------------------');
     print('ID: $id');
     print('Nombre: $nombre');
     print('Primer Apellido: $primer_apellido');
@@ -126,7 +118,8 @@ abstract class Persona {
     print('CURP: $curp');
     print('Estatus: $estatus');
   }
-
+  // Método auxiliar para formatear números a dos dígitos
+  // Retorna el número como cadena con dos dígitos
   String _twoDigits(int n) {
     return n >= 10 ? '$n' : '0$n';
   }
@@ -141,9 +134,9 @@ class Paciente extends Persona {
   DateTime fechaUltimaCita;
   usuario tipoUsuario;
 
+    // Constructor para inicializar los atributos del paciente
   Paciente({
     required int id,
-    required String cortesyTitle,
     required String nombre,
     required String primer_apellido,
     required String segundo_apellido,
@@ -161,7 +154,6 @@ class Paciente extends Persona {
     required this.tipoUsuario,
   }) : super(
             id: id,
-            cortesyTitle: cortesyTitle,
             nombre: nombre,
             primer_apellido: primer_apellido,
             segundo_apellido: segundo_apellido,
@@ -176,19 +168,18 @@ class Paciente extends Persona {
   void imprimirDatosPersona() {
     super.imprimirDatosPersona();
     print('Paciente: ${tipoUsuario.toString().split('.').last}');
-    print('Datos adicionales del paciente:');
     print('NSS: $nss');
     print('Tipo de Seguro: $tipoSeguro');
     print('Estatus de Vida: ${estatusVida.toString().split('.').last}');
     print('Estatus Médico: $estatusMedico');
     print('Fecha de Registro: ${fechaRegistro.year}-${_twoDigits(fechaRegistro.month)}-${_twoDigits(fechaRegistro.day)}');
-    
   }
 
+  
+    // Método que imprime los datos de la persona y los del paciente
   void imprimirDatosPaciente() {
     imprimirDatosPersona();
     print('Fecha Última Cita: ${fechaUltimaCita.year}-${_twoDigits(fechaUltimaCita.month)}-${_twoDigits(fechaUltimaCita.day)}');
-    
   }
 
   void registrarDefuncion() {
