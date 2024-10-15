@@ -19,10 +19,10 @@ el M.T.I Marco A. Ramirez Hernandez
 |9|Clases y Sobreescritura de Metodos Nativos |9| FINALIZADA
 |10|Constructores Nombrados |8| FINALIZADA
 |11|Getters (lectura controlada) y Setters(Modificación controlada) |9| FINALIZADA
-|12|Clases Abstractas|11| ACTIVA
-|TAREA04|Uso de las clases Abstractas en el caso de estudio|10| ACTIVA
-|13|Aserciones|3| ACTIVA
-|14|Mixis|9| ACTIVA
+|12|Clases Abstractas|11|FINALIZADA
+|TAREA04|Uso de las clases Abstractas en el caso de estudio|10|FINALIZADA
+|13|Aserciones|3| FINALIZADA
+|14|Mixis|9| FINALIZADA
 ### Lista de Herramientas
 ![DART](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white)
 
