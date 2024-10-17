@@ -23,6 +23,11 @@ el M.T.I Marco A. Ramirez Hernandez
 |TAREA04|Uso de las clases Abstractas en el caso de estudio|10|FINALIZADA
 |13|Aserciones|3| FINALIZADA
 |14|Mixis|9| FINALIZADA
+|15|Futures|5| ACTIVA
+|16|Async Await|5| ACTIVA
+|17|Try Catch Finally|6| ACTIVA
+|18|Stream|6| ACTIVA
+|19|Stream Await|4| ACTIVA
 ### Lista de Herramientas
 ![DART](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white)
 
